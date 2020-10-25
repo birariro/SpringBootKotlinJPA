@@ -20,4 +20,5 @@ public class PostsApiController {
     }
     //사용자가 어떻게 DTO를 사용한것인가?
     //클라이언트 -> DTO - web레이어 순서인가?
+    //web레이너는 DTO 만을 처리한다고 했는데 사용자가 어떻게 DTO를 보내고있는거지?
 }
