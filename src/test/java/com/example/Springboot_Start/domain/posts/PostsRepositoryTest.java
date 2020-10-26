@@ -12,12 +12,12 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class PostsRepositoryTest {
     @Autowired
     PostsRepository postsRepository;
 
-    @After
+    @After //테스트가 끝날때 수행할 메소드를 지정
     public void clenup()
     {
         postsRepository.deleteAll();
@@ -28,13 +28,13 @@ public class PostsRepositoryTest {
         String title ="테스트 게시글";
         String content = "테스트 본문";
 
-        postsRepository.save(Posts.builder()
+        postsRepository.save(Posts.builder() //테이블 posts에 insert/update를 실행한다 id가있다면 update , 없다면 insert 실행
         .title(title)
         .content(content)
         .author("k4keye@naver.com")
         .build());
 
-        List<Posts> postsList = postsRepository.findAll();
+        List<Posts> postsList = postsRepository.findAll(); //posts 테이블에 있는 모든 데이터 조회
 
         Posts posts = postsList.get(0);
         assertThat(posts.getTitle()).isEqualTo(title);

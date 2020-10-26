@@ -2,11 +2,11 @@ package com.example.Springboot_Start.web;
 
 
 import com.example.Springboot_Start.service.posts.PostsService;
+import com.example.Springboot_Start.web.dto.PostsResponseDto;
 import com.example.Springboot_Start.web.dto.PostsSaveRequestDto;
+import com.example.Springboot_Start.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
@@ -18,7 +18,16 @@ public class PostsApiController {
     {
         return postsService.save(requestDto);
     }
-    //사용자가 어떻게 DTO를 사용한것인가?
-    //클라이언트 -> DTO - web레이어 순서인가?
-    //web레이너는 DTO 만을 처리한다고 했는데 사용자가 어떻게 DTO를 보내고있는거지?
+
+    @PutMapping("/api/v1/posts/{id}") //업데이트
+    public Long update(@PathVariable Long id , @RequestBody PostsUpdateRequestDto requestDto)
+    {
+        return postsService.update(id,requestDto);
+    }
+
+    @GetMapping("/api/v1/posts/{id}") //출력
+    public PostsResponseDto findById(@PathVariable Long id)
+    {
+        return postsService.findById(id);
+    }
 }

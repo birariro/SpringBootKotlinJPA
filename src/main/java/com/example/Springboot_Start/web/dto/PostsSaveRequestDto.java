@@ -19,6 +19,7 @@ public class PostsSaveRequestDto {
         this.author = author;
 
     }
+    //데이터베이스에 저장시킬 폼
     public Posts toEntity(){
         return Posts.builder().title(title).content(content).author(author).build();
     }
