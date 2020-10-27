@@ -11,5 +11,5 @@ public class SpringBootStartApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootStartApplication.class, args);
 	}
-
+//https://github.com/jojoldu/freelec-springboot2-webservice/blob/master/build.gradle
 }
