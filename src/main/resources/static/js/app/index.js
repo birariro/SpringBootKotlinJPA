@@ -26,5 +26,5 @@ var main = {
         });
 
     }
-};
+}
 main.init();
