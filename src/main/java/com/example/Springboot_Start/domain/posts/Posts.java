@@ -9,7 +9,8 @@ import javax.persistence.*;
 
 @Getter //모든 필드 GET 메소드 생성
 @NoArgsConstructor //기본 생성자 자동추가.
-@Entity //다신이 테이블과 링크될 클래스임을 알린다.
+@Entity //자신이 테이블과 링크될 클래스임을 알린다.
+
 public class Posts  extends BaseTimeEntity {
     //Posts class 는 DB 테이블에 매칭될 클래스이다. Entity class 라고도한다.
     @Id //PK 라고 알린다.

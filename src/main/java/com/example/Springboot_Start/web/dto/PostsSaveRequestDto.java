@@ -17,7 +17,6 @@ public class PostsSaveRequestDto {
         this.title = title;
         this.content = content;
         this.author = author;
-
     }
     //데이터베이스에 저장시킬 폼
     public Posts toEntity(){

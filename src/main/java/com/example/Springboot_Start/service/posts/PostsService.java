@@ -20,6 +20,7 @@ public class PostsService {
 
     @Transactional
     public Long save(PostsSaveRequestDto requestDto){
+
         return postsRepository.save(requestDto.toEntity()).getId();
     }
     //데이터베이스에 저장을 시키고 ID를 반환
