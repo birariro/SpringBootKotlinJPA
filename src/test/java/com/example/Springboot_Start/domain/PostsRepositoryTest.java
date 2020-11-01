@@ -35,7 +35,7 @@ public class PostsRepositoryTest {
         .title(title)
         .content(content)
         .author("k4keye@naver.com")
-        .build());
+        .build()); //빌더 패턴으로 적용한다.
 
         List<Posts> postsList = postsRepository.findAll(); //posts 테이블에 있는 모든 데이터 조회
 
