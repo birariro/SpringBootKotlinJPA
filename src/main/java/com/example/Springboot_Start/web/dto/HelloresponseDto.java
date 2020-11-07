@@ -1,5 +1,6 @@
 package com.example.Springboot_Start.web.dto;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
@@ -7,6 +8,12 @@ import lombok.RequiredArgsConstructor;
 @Getter //선언된 필드에 GET 메소드를 생성한다.
 //dto란 응답할 데이터의 포멧이라고 볼수있다.
 public class HelloresponseDto {
-    private final String name;
-    private final int amount;
+    private  String name;
+    private  int amount;
+    @Builder
+    public HelloresponseDto(String name , int amount)
+    {
+        this.name = name;
+        this.amount = amount;
+    }
 }
