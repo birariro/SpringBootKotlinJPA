@@ -7,6 +7,7 @@ import com.example.Springboot_Start.web.dto.PostsResponseDto;
 import com.example.Springboot_Start.web.dto.PostsSaveRequestDto;
 import com.example.Springboot_Start.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -16,7 +17,8 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 @Service
 public class PostsService {
-    private final PostsRepository postsRepository;
+    @Autowired
+    private  PostsRepository postsRepository;
 
     @Transactional
     public Long save(PostsSaveRequestDto requestDto){
