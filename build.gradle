@@ -1,35 +1,20 @@
 plugins {
-	id 'org.springframework.boot' version '2.3.4.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'org.springframework.boot' version '2.4.5'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
 }
 
-group = 'com.example'
+group = 'hello'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
-
-configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
-}
+sourceCompatibility = '11'
 
 repositories {
 	mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'junit:junit:4.12'
-	compile ('org.springframework.boot:spring-boot-starter-data-jpa')
-	compile ('com.h2database:h2')
-    compile('org.projectlombok:lombok')
-	compile('org.springframework.boot:spring-boot-starter-mustache')
-	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 test {
