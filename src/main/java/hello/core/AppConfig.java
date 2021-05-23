@@ -9,6 +9,7 @@ import hello.core.order.OrderServiceImpl;
 
 public class AppConfig {
 
+    //이곳에서 구현체를 주입해주는것으로 OCP를 지킨다.
     public MemberService memberService(){
         return  new MemberServiceImpl(MemberRepository());
     }
