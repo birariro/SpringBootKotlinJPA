@@ -6,22 +6,26 @@ import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.*;
 import hello.core.order.OrderService;
 import hello.core.order.OrderServiceImpl;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.context.annotation.Bean;
 
+@Configurable
 public class AppConfig {
 
     //이곳에서 구현체를 주입해주는것으로 OCP를 지킨다.
+    @Bean
     public MemberService memberService(){
         return  new MemberServiceImpl(MemberRepository());
     }
-
-    private MemberRepository MemberRepository() {
+    @Bean
+    public MemberRepository MemberRepository() {
         return new MemoryMemberRepository();
     }
-
+    @Bean
     public OrderService orderService(){
         return new OrderServiceImpl(MemberRepository(), discountPolicy());
     }
-
+    @Bean
     public DiscountPolicy discountPolicy(){
         return new RateDiscountPolicy();
     }
