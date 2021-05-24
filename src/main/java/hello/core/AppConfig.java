@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Bean;
 public class AppConfig {
 
     //이곳에서 구현체를 주입해주는것으로 OCP를 지킨다.
+    //기본적으로 메소드 이름을 빈 이름으로한다.
     @Bean
     public MemberService memberService(){
         return  new MemberServiceImpl(MemberRepository());
