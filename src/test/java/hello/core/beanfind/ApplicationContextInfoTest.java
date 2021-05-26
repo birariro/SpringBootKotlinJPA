@@ -9,6 +9,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class ApplicationContextInfoTest {
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 
+    //상속관계에서 부모를 조회하면 자식도 다 조회된다.
     @Test
     @DisplayName("모든 빈 출력")
     void findAllBean(){
