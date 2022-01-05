@@ -1,4 +1,4 @@
-#스프링 API 공부
+# SpringBoot+JPA+Kotlin
 인프런 <br/>
 스프링 부트와 JPA 활용1 <br/>
 스프링 부트와 JPA 활용2 API 개발 성능 최적화 <br/>
