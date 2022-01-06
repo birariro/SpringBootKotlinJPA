@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/springbootkotlinjpa;MVCC=TRUE
+    username: sa
+    password :
+    deriver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+Loggin:
+  level:
+    org.hibernate.SQL: debug
