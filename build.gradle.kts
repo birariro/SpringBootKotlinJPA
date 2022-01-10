@@ -6,8 +6,17 @@ plugins {
 	kotlin("jvm") version "1.6.10"
 	kotlin("plugin.spring") version "1.6.10"
 	kotlin("plugin.jpa") version "1.6.10"
+	id ("org.jetbrains.kotlin.plugin.allopen") version "1.5.21"
+	id ("org.jetbrains.kotlin.plugin.noarg") version "1.5.21"
 }
-
+noArg {
+	annotation("javax.persistence.Entity")
+}
+allOpen {
+	annotation("javax.persistence.Entity")
+	annotation("javax.persistence.MappedSuperclass")
+	annotation("javax.persistence.Embeddable")
+}
 group = "com.k4keye"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11

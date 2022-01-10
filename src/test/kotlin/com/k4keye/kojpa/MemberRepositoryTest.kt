@@ -1,5 +1,6 @@
 package com.k4keye.kojpa
 
+import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -13,6 +14,11 @@ internal class MemberRepositoryTest{
 
     @Test
     fun testMember(){
+        val member = Member(0L,"memberA")
+
+         memberRepository.save(member)
+        val findMember = memberRepository.findById(member.id)
+        assertEquals(findMember.get().id, member.id)
 
     }
 
