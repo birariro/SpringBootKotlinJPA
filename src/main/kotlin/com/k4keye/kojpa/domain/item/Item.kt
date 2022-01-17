@@ -1,5 +1,6 @@
 package com.k4keye.kojpa.domain.item
 
+import com.k4keye.kojpa.domain.Category
 import javax.persistence.*
 
 @Entity
@@ -8,10 +9,13 @@ import javax.persistence.*
 abstract class Item {
         @Id @GeneratedValue
         @Column(name = "item_id")
-        val id:Long = 0
+        var id:Long = 0
 
-        val name:String =""
-        val price:Int =0
-        val stockQuantity:Int =0
+        var name:String =""
+        var price:Int =0
+        var stockQuantity:Int =0
+
+        @ManyToMany(mappedBy = "items")
+        var categories:MutableList<Category>? = null
 
 }
