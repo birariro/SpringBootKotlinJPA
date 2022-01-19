@@ -9,8 +9,8 @@ class Delivery (
         val id :Long,
         @OneToOne(mappedBy = "delivery")
         val order:Order,
-        @Embedded
+        @Embedded //내장 객체
         val address:Address,
-        @Enumerated(EnumType.STRING)
+        @Enumerated(EnumType.STRING) //반드시 type 를 string 로 해야한다.
         val status:DeliveryStatus
         )
