@@ -16,7 +16,7 @@ class Category (
         joinColumns = [JoinColumn(name = "category_id")],
         inverseJoinColumns = [JoinColumn(name = "item_id")])
         val items:MutableList<Item>,
-        @ManyToOne
+        @ManyToOne(fetch = FetchType.LAZY)
         @JoinColumn(name = "parent_id")
         val parent:Category,
 

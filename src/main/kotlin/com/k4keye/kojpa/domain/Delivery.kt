@@ -1,13 +1,14 @@
 package com.k4keye.kojpa.domain
 
 import javax.persistence.*
+import javax.persistence.FetchType.*
 
 @Entity
 class Delivery (
         @Id @GeneratedValue
         @Column(name = "delivery_id")
         val id :Long,
-        @OneToOne(mappedBy = "delivery")
+        @OneToOne(mappedBy = "delivery", fetch = LAZY)
         val order:Order,
         @Embedded //내장 객체
         val address:Address,
